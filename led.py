@@ -3,7 +3,7 @@ from time import sleep
 
 led = LED(17)
 
-wait = 0.1
+wait = float(input("How many seconds should the light stay on at a time?\n"))
 
 while True:
     led.on()
