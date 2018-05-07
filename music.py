@@ -1,7 +1,7 @@
 from gpiozero import Buzzer
 from time import sleep
 
-beep = Buzzer(17)
+beep = Buzzer(19)
 
 def wait(hertz):
    return ((1 / hertz) / 2) * 1000

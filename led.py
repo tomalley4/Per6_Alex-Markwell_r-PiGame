@@ -1,12 +1,11 @@
-from gpiozero import LED
+from gpiozero import LED, Button
 from time import sleep
 
 led = LED(17)
+button = Button(19)
 
-wait = float(input("How many seconds should the light stay on at a time?\n"))
+button.wait_for_press()
+led.on()
+sleep(3)
+led.off()
 
-while True:
-    led.on()
-    sleep(wait)
-    led.off()
-    sleep(wait)
