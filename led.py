@@ -4,7 +4,10 @@ from signal import pause
 led = LED(17)
 button = Button(19)
 
-button.when_pressed = led.on
-button.when_released = led.off
+current = False
 
-pause()
+while True:
+   prev = current
+   current = button.is_pressed
+   if current and not(prev):
+      led.toggle()
