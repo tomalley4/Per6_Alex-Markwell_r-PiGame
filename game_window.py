@@ -1,6 +1,6 @@
 import pygame
 
-screen = pygame.display.set_mode((640, 480))
+screen = pygame.display.set_mode((int(input("How wide should the window be?\n")), int(input("How tall should the window be?\n"))))
 running = True
 
 while running:
