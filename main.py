@@ -37,7 +37,8 @@ if input("Do you want to initially input decimal or binary? (d/b)\n")[0].lower()
    run2 = 0
    for i in range(5):
       run2 += run[i]*[1,10,100,1000,10000][i]
-   print(binary(run2, False))
+   if run2 == 0: print(0)
+   else: print(binary(run2, False))
 else:
    numb = int(input("Input a decimal value between 1 and 31: "))
    use = '00000'+str(binary(numb))
