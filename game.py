@@ -1,12 +1,28 @@
 import pygame
 
+def split(string):
+   run = []
+   for char in string:
+      run.append(char)
+   return run
+
 def binary(num, dec_inp = True):
-   pass
+   '''Converts decimal into binary (or Vice Versa)'''
+   if dec_inp:
+      run = ''
+      while num > 0:
+         run += '01'[int(num%2)]
+         num = (num - num%2) / 2
+      return int(run[::-1])
+   else:
+      run = 0
+      num = split(str(num))
+      runB = 1
+      while len(num) > 0:
+         poof = int(num.pop())
+         run += poof*runB
+         runB *= 2
+      return run
 
 if __name__ == '__main__':
-   screen = pygame.display.set_mode((int(input("How wide should the window be?\n")), int(input("How tall should the window be?\n"))))
-   running = True
-   while running:
-      event = pygame.event.poll()
-      if event.type == pygame.QUIT:
-         running = False
+   print(binary(10011, False))
