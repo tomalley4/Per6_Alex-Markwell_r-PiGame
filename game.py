@@ -1,5 +1,3 @@
-import pygame
-
 def split(string):
    run = []
    for char in string:
